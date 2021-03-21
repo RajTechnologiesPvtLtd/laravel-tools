@@ -10,5 +10,17 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "RajTechnologies\\Tools\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RajTechnologies\\Tools\\ToolServiceProvider"
+            ]
+        }
+    }
 }
