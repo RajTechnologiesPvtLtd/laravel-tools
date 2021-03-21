@@ -1,0 +1,14 @@
+{
+    "name": "rajtechnologies/laravel-tools",
+    "description": "All Type of Base Tools to Helping Development",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bhargav Raviya",
+            "email": "rajtechnologies@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
