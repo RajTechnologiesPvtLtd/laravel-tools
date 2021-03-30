@@ -6,7 +6,7 @@ https://github.com/RajTechnologiesPvtLtd/laravel-tools
 1) In order to install Laravel Tools, just add the following to your composer. Then run `composer`:
 
 ```json
-composer rajtechnologies/laravel-tools
+composer require rajtechnologies/laravel-tools
 ```
 2) Open your `config/app.php` and add the following to the `providers` array:
 
