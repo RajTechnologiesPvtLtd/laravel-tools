@@ -17,12 +17,14 @@ RajTechnologies\Tools\ToolServiceProvider::class,
 
 - Clear Cache
 - Routes List
+- HTTP Status Code List
 
 ## URL Routes
 
 | Name            | URL                 | Description                     |
 |-----------------|---------------------|---------------------------------|
 | Clear Cache     | clear-cache         | all type cache clear in larevel |
+| HTTP status Code| httplist            | HTTP Status Code List (cheat sheet) |
 | Routes List     | routeslist          | All Routes List                 |
 | API Routes List | routeslist?only=api | Only API Routes List            |
 
@@ -36,4 +38,4 @@ RajTechnologies\Tools\ToolServiceProvider::class,
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel Tools is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
