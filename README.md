@@ -18,6 +18,7 @@ RajTechnologies\Tools\ToolServiceProvider::class,
 - Clear Cache
 - Routes List
 - HTTP Status Code List
+- Laravel App Convert To PWA App
 
 ## URL Routes
 
@@ -28,6 +29,36 @@ RajTechnologies\Tools\ToolServiceProvider::class,
 | Routes List     | routeslist          | All Routes List                 |
 | API Routes List | routeslist?only=api | Only API Routes List            |
 
+## PWA App
+- Open your `config/app.php` and add the following to the `providers` array: 
+```bash
+    'LaravelPwa' => \RajTechnologies\Tools\LaravelPwa::class,
+```  
+## Publish the Assets For PWA App
+
+Run the following command to publish config file,
+
+    php artisan laravel-pwa:publish
+## Configure PWA
+
+ Add following code in root blade file in header section.
+```php
+    <!-- PWA  -->
+    <meta name="theme-color" content="#6777ef"/>
+    <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
+```
+Add following code in root blade file in before close the body.
+```js
+    <script src="{{ asset('/sw.js') }}"></script>
+    <script>
+        if (!navigator.serviceWorker.controller) {
+            navigator.serviceWorker.register("/sw.js").then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    </script>
+```
 ## Contributing
 
 - [Bhargav Raviya](https://github.com/bhargavraviya)

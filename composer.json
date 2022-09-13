@@ -2,6 +2,15 @@
     "name": "rajtechnologies/laravel-tools",
     "description": "All Type of Base Tools to Helping Development",
     "type": "library",
+    "keywords": [
+        "laravel-clear-cache",
+        "laravel-routes-view-list",
+        "laravel-http-status-code-list",
+        "laravel-pwa",
+        "pwa-laravel",
+        "laravel",
+        "php"
+    ],
     "license": "MIT",
     "authors": [
         {
