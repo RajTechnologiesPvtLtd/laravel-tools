@@ -1,6 +1,6 @@
 {
     "name": "rajtechnologies/laravel-tools",
-    "description": "All Type of Base Tools to Helping Development",
+    "description": "All Type of Base Tools to Helping Development and Repository Generator",
     "type": "library",
     "keywords": [
         "laravel-clear-cache",
@@ -9,7 +9,10 @@
         "laravel-pwa",
         "pwa-laravel",
         "laravel",
-        "php"
+        "php",
+        "generator",
+        "cli",
+        "artisan"
     ],
     "license": "MIT",
     "authors": [
