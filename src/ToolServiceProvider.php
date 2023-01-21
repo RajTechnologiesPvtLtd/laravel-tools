@@ -7,6 +7,7 @@ use RajTechnologies\Tools\commands\PWAPublish;
 use Illuminate\Support\Facades\File;
 use RajTechnologies\Tools\Console\MakeRepository;
 use RajTechnologies\Tools\Console\MakeRepositoryInterface;
+use RajTechnologies\Tools\Console\MakeAction;
 use RajTechnologies\Tools\Console\MakePivotCommand;
 use RajTechnologies\Tools\Console\MakeModel;
 use RajTechnologies\Tools\Console\MakeService;
@@ -31,6 +32,11 @@ class ToolServiceProvider extends ServiceProvider
             ], 'config');
         }
 		// Repository Pattern End
+		// Action Start
+		if ($this->app->runningInConsole()) {
+            $this->commands([MakeAction::class]);
+        }
+		// Action End
 		// Pivot Table Start
 		if ($this->app->runningInConsole()) {
             $this->commands([MakePivotCommand::class]);
