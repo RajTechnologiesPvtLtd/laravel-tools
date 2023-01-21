@@ -31,7 +31,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "RajTechnologies\\Tools\\ToolServiceProvider"
+                "RajTechnologies\\Tools\\ToolServiceProvider",
+                "RajTechnologies\\Tools\\Http\\Providers\\CommandServiceProvider"
             ]
         }
     }
