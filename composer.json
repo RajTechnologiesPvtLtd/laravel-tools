@@ -12,7 +12,9 @@
         "php",
         "generator",
         "cli",
-        "artisan"
+        "artisan",
+        "services",
+        "pattern"
     ],
     "license": "MIT",
     "authors": [
