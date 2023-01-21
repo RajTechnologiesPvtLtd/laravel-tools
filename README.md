@@ -175,6 +175,18 @@ class RepositoryServiceProvider extends ServiceProvider
    }
 }
 ```
+# Pivot Table Generator
+
+## Usage
+Run the following command on the command-line to generate a new migration for the pivot table.
+```
+php artisan make:pivot {first_table_name} {second_table_name}
+```
+
+The command will create a new migration in ```database/migrations```. Run the migrations to create the table.
+```
+php artisan migrate
+```
 
 # Service Generator
 
@@ -347,8 +359,6 @@ class PostController extends Controller
     }
 }
 ```
-
-
 
 ## Contributing
 

@@ -13,6 +13,8 @@
         "generator",
         "cli",
         "artisan",
+        "pivot",
+        "migrations"
         "services",
         "pattern"
     ],
