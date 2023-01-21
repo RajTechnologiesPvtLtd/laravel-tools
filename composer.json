@@ -15,7 +15,7 @@
         "artisan",
         "action",
         "pivot",
-        "migrations"
+        "migrations",
         "services",
         "pattern"
     ],
