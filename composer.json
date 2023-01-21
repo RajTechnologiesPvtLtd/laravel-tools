@@ -12,7 +12,9 @@
         "php",
         "generator",
         "cli",
-        "artisan"
+        "artisan",
+        "pivot",
+        "migrations"
     ],
     "license": "MIT",
     "authors": [

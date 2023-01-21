@@ -22,12 +22,12 @@ RajTechnologies\Tools\ToolServiceProvider::class,
 
 ## URL Routes
 
-| Name            | URL                 | Description                     |
-|-----------------|---------------------|---------------------------------|
-| Clear Cache     | clear-cache         | all type cache clear in larevel |
-| HTTP status Code| httplist            | HTTP Status Code List (cheat sheet) |
-| Routes List     | routeslist          | All Routes List                 |
-| API Routes List | routeslist?only=api | Only API Routes List            |
+| Name             | URL                 | Description                         |
+| ---------------- | ------------------- | ----------------------------------- |
+| Clear Cache      | clear-cache         | all type cache clear in larevel     |
+| HTTP status Code | httplist            | HTTP Status Code List (cheat sheet) |
+| Routes List      | routeslist          | All Routes List                     |
+| API Routes List  | routeslist?only=api | Only API Routes List                |
 
 ## PWA App
 - Open your `config/app.php` and add the following to the `providers` array: 
@@ -175,6 +175,19 @@ class RepositoryServiceProvider extends ServiceProvider
    }
 }
 ```
+# Pivot Table Generator
+
+## Usage
+Run the following command on the command-line to generate a new migration for the pivot table.
+```
+php artisan make:pivot {first_table_name} {second_table_name}
+```
+
+The command will create a new migration in ```database/migrations```. Run the migrations to create the table.
+```
+php artisan migrate
+```
+
 ## Contributing
 
 - [Bhargav Raviya](https://github.com/bhargavraviya)
