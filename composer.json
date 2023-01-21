@@ -12,7 +12,9 @@
         "php",
         "generator",
         "cli",
-        "artisan"
+        "artisan",
+        "services",
+        "pattern"
     ],
     "license": "MIT",
     "authors": [
@@ -31,7 +33,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "RajTechnologies\\Tools\\ToolServiceProvider"
+                "RajTechnologies\\Tools\\ToolServiceProvider",
+                "RajTechnologies\\Tools\\Http\\Providers\\CommandServiceProvider"
             ]
         }
     }
