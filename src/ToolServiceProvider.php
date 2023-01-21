@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\File;
 use RajTechnologies\Tools\Console\MakeRepository;
 use RajTechnologies\Tools\Console\MakeRepositoryInterface;
 use RajTechnologies\Tools\Console\MakePivotCommand;
+use RajTechnologies\Tools\Console\MakeModel;
+use RajTechnologies\Tools\Console\MakeService;
 
 class ToolServiceProvider extends ServiceProvider
 {
@@ -34,6 +36,14 @@ class ToolServiceProvider extends ServiceProvider
             $this->commands([MakePivotCommand::class]);
         }
 		// Pivot Table End
+		// Service Start
+		if ($this->app->runningInConsole()) {
+            $this->commands([
+                MakeService::class,
+                MakeModel::class
+            ]);
+        }
+		// Service End		
 	}
 
 	public function register(){
