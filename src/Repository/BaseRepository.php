@@ -23,6 +23,14 @@ class BaseRepository implements EloquentRepositoryInterface
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function getQuery()
+    {
+        return $this->model::query();
+    }
+
+    /**
      * @return Collection
      */
     public function all()
