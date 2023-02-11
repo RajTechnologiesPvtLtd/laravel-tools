@@ -27,7 +27,12 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require-dev": {
+        "raviyatechnical/laravel-action-generator": "dev-master",
+        "raviyatechnical/laravel-repository-generator": "dev-master",
+        "raviyatechnical/laravel-service-generator": "dev-master",
+        "raviyatechnical/laravel-pivot-table-generator": "dev-master"
+    },
     "autoload": {
         "psr-4": {
             "RajTechnologies\\Tools\\": "src/"
@@ -36,8 +41,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "RajTechnologies\\Tools\\ToolServiceProvider",
-                "RajTechnologies\\Tools\\Http\\Providers\\CommandServiceProvider"
+                "RajTechnologies\\Tools\\ToolServiceProvider"
             ]
         }
     }

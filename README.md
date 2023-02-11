@@ -61,38 +61,10 @@ Add following code in root blade file in before close the body.
 ```
 # Repository Generator
 
-## Table of Contents
-  <ol>
-    <li><a href="#features">Features</a></li>
-    <li>
-        <a href="#getting-started">Getting started</a>
-        <ul>
-            <li><a href="#installation">Installation</a></li>
-            <li><a href="#publish-config-(optional)">Publish config (optional)</a></li>
-        </ul>
-    </li>
-    <li>
-      <a href="#usage">Usage</a>
-      <ul>
-        <li><a href="#generating-repositories">Generating repositories</a></li>
-        <li><a href="#dependency-injection">Dependency Injection</a></li>
-      </ul>
-    </li>
-    <li><a href="#manual-binding">Manual binding</a></li>
-    <li><a href="#more-generator-packages">More generator packages</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-  </ol>
-  
 ## Features
 With this package you can generate repositories with the ```artisan make:repository``` command. 
 The generator will generate the repository, repository interface and will bind them automatically (can be changed to 
 manual binding) to the Service Container so you can inject the interface into your controllers.
-
-### Publish config (optional)
-```
-php artisan vendor:publish --provider="RajTechnologies\Tools\ToolServiceProvider" --tag="config"
-```
 
 ## Usage
 For usage take the following steps. Generate the repository and then inject it into a controller or service.
@@ -106,74 +78,6 @@ This example will generate the following files:
 ```
 app\Repositories\Eloquent\UserRepository
 app\Repositories\UserRepositoryInterface
-```
-
-### Dependency Injection
-Next we have to inject the interface into the constructor our controller or service. For this example we will use the UserController.
-```php
-<?php
-
-namespace App\Http\Controllers;
-
-use App\Repositories\UserRepositoryInterface;
-
-class UserController extends Controller
-{
-    private $user;
-
-    public function __construct(UserRepositoryInterface $userRepository)
-    {
-        $this->user = $userRepository;
-    }
-    
-    // your controller functions
-}
-```
-
-By default you will be able to use Eloquent methods like ```all()``` and ```find()```.
-You can extend this in your repository. Now you will be able to use your repository 
-in your methods like this.
-```php
-public function index()
-{
-    return $this->user->all();
-}
-```
-## Manual binding
-By default the package will automatically bind the repository interfaces for you with the repositories so you can
-inject the interface into your controllers. If you want to bind manually you can disable
-this behaviour by setting the ```auto_bind_interfaces``` option to ```false``` in ```config\repository-generator.php```.
-If the config is not there make sure to publish it first as described in the Installation chapter.
-
-You can add your bindings to your AppServiceProvider or 
-you can a create a new provider with ```php artisan make:provider RepositoryServiceProvider```
-(don't forget to add it in ```config\app.php```) and add the bindings in the ```register()``` method, see the example below.
-
-```php
-<?php 
-
-namespace App\Providers; 
-
-use App\Repositories\Eloquent\UserRepository;
-use App\Repositories\UserRepositoryInterface;
-use Illuminate\Support\ServiceProvider; 
-
-/** 
-* Class RepositoryServiceProvider 
-* @package App\Providers 
-*/ 
-class RepositoryServiceProvider extends ServiceProvider 
-{ 
-   /** 
-    * Register services. 
-    * 
-    * @return void  
-    */ 
-   public function register() 
-   { 
-       $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
-   }
-}
 ```
 # Pivot Table Generator
 
@@ -189,36 +93,6 @@ php artisan migrate
 ```
 
 # Service Generator
-
-## Table of Contents
-  <ol>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#installation">Installation</a></li>
-    <li>
-      <a href="#usage">Usage</a>
-      <ul>
-        <li><a href="#generate-services">Generate services</a></li>
-        <li><a href="#generate-services-for-models">Generate services for models</a></li>
-        <li><a href="#generate-services-for-controllers">Generate services for controllers</a></li>
-      </ul>
-    </li>
-    <li>
-        <a href="#the-service-pattern">The service pattern</a>
-        <ul>
-            <li><a href="#when-to-use-the-service-pattern">When to use the service pattern</a></li>
-            <li>
-                <a href="#how-to-use-services">How to use services</a>
-                <ul>
-                    <li><a href="#static-methods">Static methods</a></li>
-                    <li><a href="#depency-injection">Dependency Injection</a></li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li><a href="#more-generator-packages">More generator packages</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-  </ol>
 
 ## Usage
 After installation the ```php artisan make:service {name}``` will be available in the list
@@ -358,6 +232,13 @@ class PostController extends Controller
         return view('posts.show', compact('post'));
     }
 }
+```
+# Action Generator
+
+## Usage
+Run the following command on the command-line to generate a new action.
+```
+php artisan make:action {name}
 ```
 
 ## Contributing
