@@ -27,12 +27,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require-dev": {
-        "raviyatechnical/laravel-action-generator": "dev-master",
-        "raviyatechnical/laravel-repository-generator": "dev-master",
-        "raviyatechnical/laravel-service-generator": "dev-master",
-        "raviyatechnical/laravel-pivot-table-generator": "dev-master"
-    },
+    "require-dev": {},
     "autoload": {
         "psr-4": {
             "RajTechnologies\\Tools\\": "src/"
