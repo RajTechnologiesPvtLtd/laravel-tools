@@ -4,8 +4,9 @@ namespace RajTechnologies\Tools\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Route;
-use Artisan;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Route;
+
 class RouteController extends Controller
 {
     public function clearcache()
@@ -16,16 +17,18 @@ class RouteController extends Controller
         Artisan::call('view:clear ');
         return "Cache is cleared";
     }
+
     public function index(Request $request)
     {
-        if(request()->has('only')){
-            $title = "API Routes List";
-        }else{
-            $title = "All Routes List";
+        if (config('app.env') != 'production') {
+            if (request()->has('only')) {
+                $title = "API Routes List";
+            } else {
+                $title = "All Routes List";
+            }
+            $routeCollection = Route::getRoutes();
+            return view("Tool::routes.index", compact('title', 'routeCollection'));
         }
-        $routeCollection = Route::getRoutes();
-        return view("Tool::routes.index",compact('title','routeCollection'));
+        abort(403);
     }
-
-    
 }
